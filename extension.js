@@ -15,7 +15,7 @@ function enable() {
 
     function calculator(input, inTerminal) {
         this._commandError = false;
-        if (input.match(/^=([\d\+\-\*\/\(\) ]+)$/)) {
+        if (input.match(/^=([\d\+\-\*\/\(\) \.]+)$/)) {
             try {
                 value = String(eval(input.substr(1)));
             } catch (e) {

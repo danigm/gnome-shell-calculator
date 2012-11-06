@@ -10,11 +10,15 @@ function init() {
 }
 
 function enable() {
-    let r = imports.ui.main.getRunDialog();
+    if (Main.runDialog == null) {
+        Main.runDialog = new RunDialog.RunDialog();
+    }
+    let r = Main.runDialog;
     basef = Lang.bind(r, r._run);
 
     function calculator(input, inTerminal) {
         this._commandError = false;
+        let value = "";
         if (input.match(/^=([\d\+\-\*\/\(\) \.]+)$/)) {
             try {
                 value = String(eval(input.substr(1)));
@@ -33,6 +37,10 @@ function enable() {
 }
 
 function disable() {
-    let r = imports.ui.main.getRunDialog();
+    if (Main.runDialog == null) {
+        Main.runDialog = new RunDialog.RunDialog();
+    }
+    let r = Main.runDialog;
+
     r._run = basef;
 }

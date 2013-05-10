@@ -28,6 +28,9 @@ function enable() {
             this._entryText.set_text('=' + value);
             this._showError(value);
             Main.notify(value, '');
+
+            let clipboard = St.Clipboard.get_default();
+            clipboard.set_text(St.ClipboardType.CLIPBOARD, value);
         } else {
             basef(input, inTerminal);
         }

@@ -2,7 +2,6 @@ const St = imports.gi.St;
 const Main = imports.ui.main;
 
 const RunDialog = imports.ui.runDialog;
-const Lang = imports.lang;
 
 let basef = RunDialog._run;
 
@@ -14,7 +13,7 @@ function enable() {
         Main.runDialog = new RunDialog.RunDialog();
     }
     let r = Main.runDialog;
-    basef = Lang.bind(r, r._run);
+    basef = r._run.bind(r);
 
     function calculator(input, inTerminal) {
         this._commandError = false;
@@ -36,7 +35,7 @@ function enable() {
         }
     }
 
-    r._run = Lang.bind(r, calculator);
+    r._run = calculator.bind(r);
 }
 
 function disable() {

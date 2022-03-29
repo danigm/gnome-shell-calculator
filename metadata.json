@@ -1,5 +1,5 @@
 {
-    "shell-version": ["3.18", "40", "41", "42"],
+    "shell-version": ["40", "41", "42"],
     "uuid": "calc@danigm.wadobo.com",
     "name": "calc",
     "description": "Simple run dialog calculation"

@@ -2,5 +2,6 @@
     "shell-version": ["45"],
     "uuid": "calc@danigm.wadobo.com",
     "name": "calc",
-    "description": "Simple run dialog calculation"
+    "description": "Simple run dialog calculation",
+    "url": "https://github.com/danigm/gnome-shell-calculator"
 }
